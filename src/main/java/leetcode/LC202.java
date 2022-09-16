@@ -3,6 +3,7 @@ package leetcode;
 import java.util.Scanner;
 
 /**
+ * Leetcode 202: 快乐数
  * 编写一个算法来判断一个数 n 是不是快乐数。
  *
  * 「快乐数」定义为：
