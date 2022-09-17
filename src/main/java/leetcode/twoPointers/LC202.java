@@ -1,4 +1,4 @@
-package leetcode;
+package leetcode.twoPointers;
 
 import java.util.Scanner;
 
@@ -13,7 +13,7 @@ import java.util.Scanner;
  * 如果 n 是 快乐数 就返回 true ；不是，则返回 false 。
  */
 public class LC202 {
-
+    // 向后进行一步
     public int getNext(int n) {
         int totalSum = 0;
         while (n > 0) {
@@ -23,12 +23,12 @@ public class LC202 {
         }
         return totalSum;
     }
-
+    // 判断是不是快乐数
     public boolean isHappy(int n) {
         int slowRunner = n;
         int fastRunner = getNext(n);
+        // 慢指针赶上快指针的时候说明陷入循环
         while (fastRunner != 1 && slowRunner != fastRunner) {
-            // 慢指针赶上快指针的时候说明陷入循环
             slowRunner = getNext(slowRunner);
             fastRunner = getNext(getNext(fastRunner));
         }
